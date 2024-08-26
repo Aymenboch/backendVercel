@@ -54,10 +54,8 @@ app.post('/mail_sheet', async (req, res) => {
 });
 
 app.get('/test', (req, res) => {
-  return res.json({
-    message: "success !!"
-  });
+  return res.json({ message: "success !!" });
 });
 
-// Export the app wrapped in serverless-http directly
-export const handler = ServerlessHttp(app);
+// Wrap the Express app with serverless-http and export as the default export
+export default ServerlessHttp(app);
